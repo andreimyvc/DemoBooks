@@ -61,42 +61,44 @@
     </div>
     <br />
     <div class="row">
-        <table class="table-bordered">
-            <tbody>
-                <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Excerpt</th>
-                    <th>PageCount</th>
-                    <th>PublishDate</th>
-                    <th>Actions</th>
+        <table class="table table-striped">
+            <thead>
+                <tr scope="row">
+                    <th scope="col">Id</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Extracto</th>
+                    <th scope="col">Cantidad de Paginas</th>
+                    <th scope="col">Fecha Publicacion</th>
+                    <th scope="col" colspan="2"></th>
                 </tr>
-            </tbody>
+            </thead>
             <tbody>
-                <tr ng-repeat="p in booksData  | filter:filterGeneral">
-                    <td>
+                <tr ng-repeat="p in booksData  | filter:filterGeneral" scope="row">
+                    <td scope="col">
                         {{ p.ID}}
                     </td>
-                    <td>
+                    <td scope="col">
                         {{ p.Title}}
                     </td>
-                    <td>
+                    <td scope="col">
                         {{ p.Description}}
                     </td>
-                    <td>
-                        {{ p.Excerpt}}
+                    <td scope="col">
+                        {{ p.Excerpt.substring(0,100)}}
                     </td>
-                    <td>
+                    <td scope="col">
                         {{ p.PageCount}}
                     </td>
-                    <td>
-                        {{ p.PublishDate}}
+                    <td scope="col">
+                        {{ (p.PublishDate+"").substring(0,10)}}
                     </td>
-                    <td>
+                    <td scope="col">
                         <button type="button" class="btn btn-primary" data-target="#vistaDetail" data-toggle="modal" ng-click="setSelectedEntity(p.ID)">
                             Detail
                         </button>
+                    </td>
+                    <td scope="col">
                         <button type="button" class="btn btn-danger" ng-click="deleteEntrada(p.ID)">
                             Descartar
                         </button>
@@ -111,7 +113,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel" ng-show="model.ID > 0">Detail</h5>
-                    <h5 class="modal-title" id="exampleModalLabel" ng-show="model.ID == 0">New book</h5>
+                    <h5 class="modal-title" id="exampleModalLabel" ng-show="!(model.ID  > 0)">New book</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

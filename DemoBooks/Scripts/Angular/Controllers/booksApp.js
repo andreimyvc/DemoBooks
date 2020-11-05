@@ -171,7 +171,8 @@ var booksController = function (scope, http, booksDataFactory) {
         d.model.Title = t.Title;
         d.model.Description = t.Title;
         d.model.Excerpt = t.Excerpt;
-        d.model.PublishDate = t.PublishDate;
+        var fecha = new Date(t.PublishDate);
+        d.model.PublishDate = fecha;
         d.model.PageCount = t.PageCount;
 
         d.control.fieldsReadOnly = true;
