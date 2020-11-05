@@ -99,8 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="Controllers\ValuesControllerTest.cs" />
+    <Compile Include="Controllers\BookControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -112,6 +111,10 @@
     <ProjectReference Include="..\DemoBooks\DemoBooks.csproj">
       <Project>{ABFDA264-06BE-4073-B882-05879DCD2CE7}</Project>
       <Name>DemoBooks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceBook\ServiceBook.csproj">
+      <Project>{a450710b-c483-4886-af6c-d887a68d3a6d}</Project>
+      <Name>ServiceBook</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
