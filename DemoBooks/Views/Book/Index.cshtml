@@ -17,14 +17,11 @@
         console.log("app iniciada");
     });
 </script>
-<div id="booksApp" data-ng-app="booksApp" data-ng-controller="booksController">
+<div id="booksApp" data-ng-app="booksApp" data-ng-controller="booksController" ng-cloak>
     <div class="jumbotron">
         <h1>Catalogo</h1>
     </div>
     <div class="row">
-
-
-
         <div class="form-group col-md-12 col-sm-6 col-xs-6">
             <label class="control-label">Buscar</label>
             <div class="input-group">
@@ -44,7 +41,7 @@
             </div>
         </div>
         <div class="form-group col-md-3 col-sm-3 col-xs-3">
-            <label class="control-label"></label>
+            <label class="control-label">Total de Registros: {{ booksData.length }}</label>
             <div class="input-group">
             </div>
         </div>
